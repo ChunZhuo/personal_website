@@ -25,8 +25,7 @@ latest_posts:
 ---
 
   I'm Chunzhuo Zhang. I received my Master's degree in bioinformatics from Wageningen University & Research, after a Bachelor's
-from Northwest Agriculture & Forestry University (NWAFU). I'm now working on biological foundation models — a path that has
-taken me from agriculture to bioinformatics, and now to AI4Biology.
+from Northwest Agriculture & Forestry University (NWAFU). I'm now working on biological foundation models — my journey runs from agriculture, to bioinformatics, to AI4Biology.
 
   Earlier, I worked on protein representation, including protein structure representation with transformers and SE(3) graph
 neural networks. I'm currently working on single-cell foundation models.
