@@ -24,8 +24,9 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I'm Chunzhuo Zhang, a researcher working at the intersection of **AI4Bio**, **bioinformatics**, and **machine learning** — applying modern ML to biological data and using biology to push on what ML methods can do.
+I'm Chunzhuo Zhang, graduated as a master student from Wageningen university & research, majoring in bioinformatics. I got my bachelors's degree from Northwest Agriculture & Forestry University (NWAFU). Now working on biological foundation models. My journey path started from agricuture to bioinformatics, then AI4biology. 
 
-On the methods side, I'm interested in representation learning, deep learning architectures, and foundation models, and how general-purpose ML ideas transfer to the structural quirks of biological data. On the application side, I'm interested in bioinformatics problems where careful modelling makes a difference for downstream biological discovery.
+I did a few work about protein representation. protein structure representation with transformer and SE(3) graph neural network. Then I am working on the single cell foundation model. 
+
 
 This site is a placeholder — proper bio, news, and publications coming soon.
