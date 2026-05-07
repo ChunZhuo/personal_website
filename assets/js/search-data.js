@@ -58,7 +58,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "post-a-post-with-plotly-js",
+            },{id: "post-multimodality-for-biology",
+        
+          title: "Multimodality for Biology",
+        
+        description: "Three approaches — bottom-up, parallel, and uniform — for fusing biological modalities, and where I think the field should go.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/multimodality-for-biology/";
+          
+        },
+      },{id: "post-a-post-with-plotly-js",
         
           title: "a post with plotly.js",
         
