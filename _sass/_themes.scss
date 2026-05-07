@@ -206,3 +206,27 @@ html[data-theme-setting="light"] {
 #light-toggle:hover .fa-half-sun-moon::after {
   color: var(--global-theme-color);
 }
+
+/******************************************************************************
+ * Universe background (dark mode only)
+ *
+ * Uses NASA's Hubble Ultra Deep Field as a fixed-position body background
+ * with a translucent black overlay so foreground text remains readable.
+ ******************************************************************************/
+html[data-theme="dark"] body {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.62)),
+    url("/assets/img/universe-bg.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* iOS Safari handles `background-attachment: fixed` poorly — fall back to
+ * scrolling on small screens so the image still shows without flicker. */
+@media (max-width: 768px) {
+  html[data-theme="dark"] body {
+    background-attachment: scroll;
+  }
+}
