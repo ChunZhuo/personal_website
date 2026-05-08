@@ -120,3 +120,15 @@ Two open problems I keep running into:
 - **Coupling-data constraint.** Training relational attention requires examples where modalities are observed together, and truly paired multimodal datasets at scale are still rare.
 
 These are the bottlenecks I think the next round of work — mine and others' — needs to address.
+
+## References
+
+1. {% reference liang2024foundations --file multimodality_for_biology %}
+2. {% reference rosen2023uce --file multimodality_for_biology %}
+3. {% reference pang2025pulsar --file multimodality_for_biology %}
+4. {% reference fu2026strand --file multimodality_for_biology %}
+5. {% reference yang2024multimodal --file multimodality_for_biology %}
+6. {% reference yang2023genecompass --file multimodality_for_biology %}
+7. {% reference littman2025presage --file multimodality_for_biology %}
+8. {% reference golkar2026mimic --file multimodality_for_biology %}
+9. {% reference ranjan2025relational --file multimodality_for_biology %}
