@@ -3,7 +3,7 @@ layout: post
 title: Multimodality for Biology
 date: 2026-05-07
 description: Three approaches — bottom-up, parallel, and uniform — for fusing biological modalities, and where I think the field should go.
-tags: multimodality single-cell foundation-models
+tags: ["machine learning", "biology", "multimodality", "single-cell", "foundation-models"]
 categories: research-notes
 thumbnail: assets/img/posts/multimodality-for-biology/image9.png
 featured: false
