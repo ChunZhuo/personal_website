@@ -9,11 +9,11 @@
       </strong>
     {%- else -%}
       {%- if lang == site.default_lang -%}
-        {%- assign target_url = current_path -%}
+        {%- assign target_path = current_path -%}
       {%- else -%}
-        {%- assign target_url = '/' | append: lang | append: current_path -%}
+        {%- assign target_path = '/' | append: lang | append: current_path -%}
       {%- endif -%}
-      <a href="{{ target_url }}">
+      <a href="{{ site.url }}{{ target_path }}">
         {%- if lang == 'zh' -%}中文{%- else -%}{{ lang | upcase }}{%- endif -%}
       </a>
     {%- endif -%}
