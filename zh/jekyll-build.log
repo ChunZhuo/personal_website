@@ -48,16 +48,16 @@ Terser: Minifying /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/assets
        Imagemagick: Searching files in /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/assets/img/
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/1-480.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/1-480.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/1-800.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/1-480.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/1-800.webp"
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/1-800.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/1-800.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/1-1400.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/1-800.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/1-1400.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/1-1400.webp
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/1-1400.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/10-480.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/1-1400.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/10-480.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/10-480.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/10-800.webp"
@@ -203,196 +203,208 @@ Terser: Minifying /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/assets
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/latent_space-480.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/book_covers/the_godfather-1400.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/latent_space-480.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/latent_space-480.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/latent_space-800.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/latent_space-480.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/latent_space-800.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/latent_space-800.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/latent_space-1400.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/latent_space-480.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/latent_space-800.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/latent_space-800.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/latent_space-1400.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/latent_space-1400.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/off-hours-hero-480.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/latent_space-800.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/latent_space-1400.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/latent_space-1400.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/off-hours-hero-480.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/off-hours-hero-480.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/off-hours-hero-800.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/latent_space-1400.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/off-hours-hero-480.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/off-hours-hero-480.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/off-hours-hero-800.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/off-hours-hero-800.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/off-hours-hero-1400.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/off-hours-hero-480.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/off-hours-hero-800.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/off-hours-hero-800.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/off-hours-hero-1400.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/off-hours-hero-1400.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/ai-daily-sprouts-2026-05-09/cover-480.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/off-hours-hero-800.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/off-hours-hero-1400.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/off-hours-hero-1400.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/ai-daily-sprouts-2026-05-09/cover-480.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/ai-daily-sprouts-2026-05-09/cover-480.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/ai-daily-sprouts-2026-05-09/cover-800.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/off-hours-hero-1400.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/ai-daily-sprouts-2026-05-09/cover-480.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/ai-daily-sprouts-2026-05-09/cover-480.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/ai-daily-sprouts-2026-05-09/cover-800.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/ai-daily-sprouts-2026-05-09/cover-800.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/ai-daily-sprouts-2026-05-09/cover-1400.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/ai-daily-sprouts-2026-05-09/cover-480.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/ai-daily-sprouts-2026-05-09/cover-800.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/ai-daily-sprouts-2026-05-09/cover-800.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/ai-daily-sprouts-2026-05-09/cover-1400.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/ai-daily-sprouts-2026-05-09/cover-1400.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/bioai-daily-sprouts-2026-05-09/cover-480.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/ai-daily-sprouts-2026-05-09/cover-800.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/ai-daily-sprouts-2026-05-09/cover-1400.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/ai-daily-sprouts-2026-05-09/cover-1400.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/ai-daily-sprouts-2026-05-10/cover-480.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/ai-daily-sprouts-2026-05-09/cover-1400.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/ai-daily-sprouts-2026-05-10/cover-480.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/ai-daily-sprouts-2026-05-10/cover-480.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/ai-daily-sprouts-2026-05-10/cover-800.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/ai-daily-sprouts-2026-05-10/cover-480.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/ai-daily-sprouts-2026-05-10/cover-800.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/ai-daily-sprouts-2026-05-10/cover-800.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/ai-daily-sprouts-2026-05-10/cover-1400.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/ai-daily-sprouts-2026-05-10/cover-800.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/ai-daily-sprouts-2026-05-10/cover-1400.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/ai-daily-sprouts-2026-05-10/cover-1400.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/bioai-daily-sprouts-2026-05-09/cover-480.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/bioai-daily-sprouts-2026-05-09/cover-480.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/bioai-daily-sprouts-2026-05-09/cover-800.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/ai-daily-sprouts-2026-05-10/cover-1400.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/bioai-daily-sprouts-2026-05-09/cover-480.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/bioai-daily-sprouts-2026-05-09/cover-480.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/bioai-daily-sprouts-2026-05-09/cover-800.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/bioai-daily-sprouts-2026-05-09/cover-800.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/bioai-daily-sprouts-2026-05-09/cover-1400.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/bioai-daily-sprouts-2026-05-09/cover-480.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/bioai-daily-sprouts-2026-05-09/cover-800.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/bioai-daily-sprouts-2026-05-09/cover-800.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/bioai-daily-sprouts-2026-05-09/cover-1400.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/bioai-daily-sprouts-2026-05-09/cover-800.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/bioai-daily-sprouts-2026-05-09/cover-1400.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/bioai-daily-sprouts-2026-05-09/cover-1400.webp
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/bioai-daily-sprouts-2026-05-09/cover-480.webp
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/bioai-daily-sprouts-2026-05-09/cover-800.webp
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/bioai-daily-sprouts-2026-05-09/cover-1400.webp
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/bioai-daily-sprouts-2026-05-09/cover-1400.webp
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/bioai-daily-sprouts-2026-05-09/cover-480.webp
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/bioai-daily-sprouts-2026-05-09/cover-800.webp
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/bioai-daily-sprouts-2026-05-09/cover-1400.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image1-480.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/bioai-daily-sprouts-2026-05-09/cover-1400.webp
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/bioai-daily-sprouts-2026-05-09/cover-480.webp
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/bioai-daily-sprouts-2026-05-09/cover-800.webp
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/bioai-daily-sprouts-2026-05-09/cover-1400.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image1-480.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image1-480.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image1-800.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image1-480.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image1-800.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image1-800.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image1-1400.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image1-480.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image1-800.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image1-800.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image1-1400.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image1-1400.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image2-480.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image1-800.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image1-1400.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image1-1400.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image2-480.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image2-480.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image2-800.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image1-1400.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image2-480.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image2-480.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image2-800.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image2-800.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image2-1400.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image2-480.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image2-800.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image2-800.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image2-1400.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image2-1400.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image3-480.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image2-800.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image2-1400.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image2-1400.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image3-480.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image3-480.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image3-800.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image2-1400.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image3-480.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image3-480.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image3-800.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image3-480.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image3-800.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image3-800.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image3-1400.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image3-800.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image3-1400.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image3-1400.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image4-480.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image3-1400.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image4-480.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image4-480.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image4-800.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image3-1400.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image4-480.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image4-480.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image4-800.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image4-800.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image4-1400.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image4-480.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image4-800.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image4-800.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image4-1400.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image4-1400.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image5-480.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image4-800.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image4-1400.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image4-1400.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image5-480.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image5-480.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image5-800.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image4-1400.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image5-480.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image5-480.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image5-800.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image5-800.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image5-1400.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image5-480.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image5-800.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image5-800.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image5-1400.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image5-1400.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image6-480.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image5-800.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image5-1400.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image5-1400.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image6-480.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image6-480.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image6-800.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image5-1400.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image6-480.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image6-480.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image6-800.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image6-800.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image6-1400.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image6-480.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image6-800.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image6-800.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image6-1400.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image6-1400.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image7-480.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image7-480.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image7-800.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image6-800.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image6-1400.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image6-1400.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image7-480.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image6-1400.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image7-480.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image7-480.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image7-800.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image7-800.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image7-1400.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image7-480.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image7-800.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image7-800.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image7-1400.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image7-1400.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image8-480.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image7-800.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image7-1400.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image7-1400.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image8-480.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image8-480.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image8-800.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image7-1400.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image8-480.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image8-480.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image8-800.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image8-800.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image8-1400.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image8-480.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image8-800.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image8-800.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image8-1400.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image8-1400.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image9-480.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image8-800.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image8-1400.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image8-1400.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image9-480.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image9-480.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image9-800.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image8-1400.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image9-480.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image9-480.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image9-800.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image9-800.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image9-1400.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image9-480.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image9-800.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image9-800.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image9-1400.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image9-1400.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/prof_pic-480.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image9-800.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image9-1400.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/posts/multimodality-for-biology/image9-1400.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/prof_pic-480.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/prof_pic-480.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/prof_pic-800.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/posts/multimodality-for-biology/image9-1400.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/prof_pic-480.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/prof_pic-480.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/prof_pic-800.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/prof_pic-800.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/prof_pic-1400.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/prof_pic-480.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/prof_pic-800.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/prof_pic-800.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/prof_pic-1400.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/prof_pic-1400.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/prof_pic_color-480.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/prof_pic-800.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/prof_pic-1400.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/prof_pic-1400.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/prof_pic_color-480.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/prof_pic-1400.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/prof_pic_color-480.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/prof_pic_color-480.webp
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/prof_pic_color-480.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/prof_pic_color-800.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/prof_pic_color-480.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/prof_pic_color-800.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/prof_pic_color-800.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/prof_pic_color-1400.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/prof_pic_color-800.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/prof_pic_color-1400.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/prof_pic_color-1400.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/publication_preview/brownian-motion-480.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/prof_pic_color-800.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/prof_pic_color-1400.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/prof_pic_color-1400.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/publication_preview/brownian-motion-480.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/publication_preview/brownian-motion-480.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/publication_preview/brownian-motion-800.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/prof_pic_color-1400.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/publication_preview/brownian-motion-480.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/publication_preview/brownian-motion-480.webp
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/publication_preview/brownian-motion-480.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/publication_preview/brownian-motion-800.webp"
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/publication_preview/brownian-motion-800.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/publication_preview/brownian-motion-800.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/publication_preview/brownian-motion-1400.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/publication_preview/brownian-motion-800.webp
@@ -413,56 +425,56 @@ Terser: Minifying /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/assets
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/rhino-480.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/publication_preview/wave-mechanics-1400.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/rhino-480.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/rhino-480.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/rhino-800.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/rhino-480.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/rhino-800.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/rhino-800.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/rhino-1400.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/rhino-480.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/rhino-800.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/rhino-800.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/rhino-1400.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/rhino-1400.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/selfie-480.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/rhino-800.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/rhino-1400.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/rhino-1400.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/selfie-480.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/selfie-480.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/selfie-800.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/rhino-1400.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/selfie-480.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/selfie-480.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/selfie-800.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/selfie-800.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/selfie-1400.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/selfie-480.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/selfie-800.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/selfie-800.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/selfie-1400.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/selfie-1400.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/template_error-480.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/selfie-800.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/selfie-1400.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/selfie-1400.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/template_error-480.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/template_error-480.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/template_error-800.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/selfie-1400.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/template_error-480.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/template_error-480.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/template_error-800.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/template_error-800.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/template_error-1400.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/template_error-480.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/template_error-800.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/template_error-800.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/template_error-1400.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/template_error-1400.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/universe-bg-480.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/template_error-800.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/template_error-1400.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/template_error-1400.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/universe-bg-480.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/universe-bg-480.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/universe-bg-800.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/template_error-1400.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/universe-bg-480.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/universe-bg-480.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/universe-bg-800.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/universe-bg-800.webp
-       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/universe-bg-1400.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/universe-bg-480.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/universe-bg-800.webp"
        Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/universe-bg-800.webp
        Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/universe-bg-1400.webp"
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/universe-bg-1400.webp
-       Imagemagick: Generated 102 file(s)
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/universe-bg-800.webp
+       Imagemagick: Generating image "/home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/universe-bg-1400.webp"
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/universe-bg-1400.webp
+       Imagemagick: Generated 105 file(s)
          AutoPages: Disabled/Not configured in site.config.
         Pagination: Complete, processed 1 pagination page(s)
-       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/assets/img/universe-bg-1400.webp
-       Imagemagick: Generated 102 file(s)
+       Imagemagick: Adding static file /home/runner/work/chunzhuo.github.io/chunzhuo.github.io/_site/zh/assets/img/universe-bg-1400.webp
+       Imagemagick: Generated 105 file(s)
          AutoPages: Disabled/Not configured in site.config.
         Pagination: Complete, processed 1 pagination page(s)
 [33m          Conflict: The following destination is shared by multiple files.[0m
