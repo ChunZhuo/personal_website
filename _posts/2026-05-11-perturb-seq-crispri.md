@@ -305,14 +305,17 @@ _styles: |
 
 CRISPRi is a useful perturbation because it behaves like a dimmer switch: the guide RNA brings a catalytically inactive Cas9 repressor to a regulatory region, and transcription drops without making a DNA double-strand break. Perturb-seq adds a pooled single-cell readout, so each cell carries both a perturbation identity and a transcriptome.
 
-The interactive view below is one continuous 3D cell, not a sequence of separate plots. Drag the cell to rotate it, scroll to zoom, or use the focus buttons to inspect the open sgRNA target sequence and the transcript/guide readout.
+The interactive view below uses chromatin organization as the biological context for target accessibility. It zooms from a semi-transparent nucleus into a chromosome territory, folded loop domains, open beads-on-a-string nucleosome fiber, a single nucleosome, and finally the DNA double helix.
 
 <div class="perturbseq-crispri-viewer" data-zoom="whole">
-  <div class="perturbseq-toolbar" aria-label="Perturb-seq CRISPRi controls">
+  <div class="perturbseq-toolbar" aria-label="Chromatin organization controls">
     <div class="perturbseq-focus-buttons">
-      <button type="button" data-focus-target="cell">Whole cell</button>
-      <button type="button" data-focus-target="binding">Open target</button>
-      <button type="button" data-focus-target="readout">Readout</button>
+      <button type="button" data-focus-target="nucleus">Nucleus</button>
+      <button type="button" data-focus-target="territory">Territory</button>
+      <button type="button" data-focus-target="loops">Loops</button>
+      <button type="button" data-focus-target="fiber">Fiber</button>
+      <button type="button" data-focus-target="nucleosome">Nucleosome</button>
+      <button type="button" data-focus-target="helix">DNA helix</button>
     </div>
     <div class="perturbseq-zoom-controls">
       <button type="button" data-zoom-action="out">-</button>
@@ -323,99 +326,15 @@ The interactive view below is one continuous 3D cell, not a sequence of separate
   </div>
 
   <div class="perturbseq-canvas-wrap">
-    <div class="perturbseq-three-stage" role="img" aria-label="Rotatable 3D cell view of Perturb-seq CRISPRi with organelles and sgRNA target binding">
+    <div class="perturbseq-three-stage" role="img" aria-label="Rotatable 3D scientific animation of eukaryotic chromatin organization from nucleus to DNA double helix">
       <canvas class="perturbseq-three-canvas"></canvas>
       <div class="perturbseq-three-hint">Drag to rotate · Scroll to zoom</div>
     </div>
-    <svg class="perturbseq-svg" viewBox="0 0 1000 700" role="img" aria-label="Zoomable whole-cell view of Perturb-seq CRISPRi with organelles and sgRNA target binding">
-      <defs>
-        <marker id="perturbseq-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor"></path>
-        </marker>
-      </defs>
-
-      <g class="perturbseq-viewport">
-        <text class="perturbseq-title" x="34" y="44">Single-cell Perturb-seq CRISPRi</text>
-        <text class="perturbseq-small" x="34" y="66">A single perturbed cell with zoomable organelles, CRISPRi target binding, transcripts, and guide identity.</text>
-
-        <path class="perturbseq-cell-body" d="M135 348 C132 212 232 120 378 96 C560 65 775 126 857 266 C935 399 867 556 707 618 C554 678 329 636 219 531 C162 476 136 420 135 348 Z"></path>
-        <path class="perturbseq-cytoplasm-texture" d="M222 236 C312 198 380 194 468 218 M678 182 C756 226 796 290 796 360 M232 520 C325 564 464 580 592 558 M716 508 C774 472 814 418 816 348"></path>
-
-        <g aria-label="nucleus">
-          <ellipse class="perturbseq-nucleus perturbseq-pulse" cx="455" cy="315" rx="205" ry="150"></ellipse>
-          <ellipse class="perturbseq-nucleolus" cx="374" cy="360" rx="48" ry="35"></ellipse>
-          <path class="perturbseq-dna" d="M306 292 C356 238 430 334 482 283 S596 256 625 323"></path>
-          <path class="perturbseq-dna" d="M302 335 C366 386 421 283 488 346 S590 394 636 338" opacity="0.72"></path>
-          <text class="perturbseq-label" x="356" y="187">nucleus</text>
-          <text class="perturbseq-small perturbseq-detail-medium" x="315" y="405">nucleolus</text>
-        </g>
-
-        <g aria-label="CRISPRi binding site">
-          <path class="perturbseq-dna perturbseq-detail-high" d="M442 278 C468 259 493 302 520 279 S552 268 567 287"></path>
-          <circle class="perturbseq-cas9 perturbseq-pulse" cx="492" cy="282" r="18"></circle>
-          <rect class="perturbseq-krab perturbseq-pulse" x="504" y="252" width="42" height="24" rx="8"></rect>
-          <path class="perturbseq-sgrna perturbseq-pulse" d="M461 294 C474 319 506 320 519 297"></path>
-          <path class="perturbseq-sgrna perturbseq-detail-high" d="M467 309 q8 12 16 0 q8 -12 16 0 q8 12 16 0"></path>
-          <rect class="perturbseq-rnap" x="558" y="305" width="62" height="30" rx="15"></rect>
-          <path class="perturbseq-transcript perturbseq-target-transcript" d="M620 321 C648 322 674 332 698 352"></path>
-          <path class="perturbseq-transcript perturbseq-detail-high" d="M621 321 q10 -10 20 0 q10 10 20 0 q10 -10 20 0"></path>
-          <text class="perturbseq-label perturbseq-detail-medium" x="518" y="238">dCas9-KRAB</text>
-          <text class="perturbseq-small perturbseq-detail-high" x="425" y="333">sgRNA pairs with target sequence</text>
-          <text class="perturbseq-small perturbseq-detail-high" x="586" y="354">reduced nascent transcript</text>
-        </g>
-
-        <g aria-label="endoplasmic reticulum">
-          <path class="perturbseq-er" d="M614 262 C705 246 766 278 775 346 C784 415 724 450 646 430"></path>
-          <path class="perturbseq-er" d="M622 298 C695 291 734 316 736 358 C738 400 699 413 648 398" opacity="0.7"></path>
-          <text class="perturbseq-small perturbseq-detail-medium" x="720" y="248">ER</text>
-        </g>
-
-        <g aria-label="mitochondria">
-          <ellipse class="perturbseq-mito" cx="255" cy="270" rx="62" ry="28" transform="rotate(-22 255 270)"></ellipse>
-          <path class="perturbseq-detail-medium" d="M214 278 C238 248 258 294 296 260" fill="none" stroke="var(--ps-red)" stroke-linecap="round" stroke-width="2"></path>
-          <ellipse class="perturbseq-mito" cx="730" cy="486" rx="68" ry="30" transform="rotate(18 730 486)"></ellipse>
-          <path class="perturbseq-detail-medium" d="M684 478 C713 513 737 456 779 496" fill="none" stroke="var(--ps-red)" stroke-linecap="round" stroke-width="2"></path>
-          <text class="perturbseq-small perturbseq-detail-medium" x="198" y="224">mitochondrion</text>
-        </g>
-
-        <g aria-label="golgi and vesicles">
-          <path class="perturbseq-organelle" d="M286 472 C340 438 392 448 431 488 C380 480 336 488 286 472 Z"></path>
-          <path class="perturbseq-organelle" d="M296 502 C344 482 389 489 422 518 C372 516 332 519 296 502 Z" opacity="0.75"></path>
-          <circle class="perturbseq-organelle" cx="452" cy="517" r="13"></circle>
-          <circle class="perturbseq-organelle" cx="478" cy="496" r="9"></circle>
-          <text class="perturbseq-small perturbseq-detail-medium" x="320" y="548">Golgi / vesicles</text>
-        </g>
-
-        <g aria-label="transcripts and guide molecules">
-          <path class="perturbseq-transcript" d="M610 464 C655 445 680 471 715 455"></path>
-          <path class="perturbseq-transcript" d="M535 518 C578 500 622 535 660 509"></path>
-          <path class="perturbseq-transcript perturbseq-target-transcript" d="M608 390 C636 405 660 396 682 418"></path>
-          <circle class="perturbseq-guide-dot" cx="592" cy="494" r="9"></circle>
-          <circle class="perturbseq-guide-dot" cx="629" cy="536" r="7" style="animation-delay: -1.2s;"></circle>
-          <text class="perturbseq-small perturbseq-detail-medium" x="612" y="576">guide identity + transcriptome stay linked to this cell</text>
-        </g>
-
-        <g aria-label="single-cell capture barcode">
-          <rect class="perturbseq-callout" x="715" y="84" width="220" height="88" rx="8"></rect>
-          <text class="perturbseq-label" x="734" y="114">Perturb-seq readout</text>
-          <text class="perturbseq-small" x="734" y="138">cell barcode + UMI</text>
-          <text class="perturbseq-small" x="734" y="156">mRNA reads + guide tag</text>
-          <path d="M720 174 C690 235 684 326 680 416" fill="none" stroke="var(--ps-muted)" stroke-dasharray="7 7" stroke-linecap="round" stroke-width="2" marker-end="url(#perturbseq-arrow)"></path>
-        </g>
-
-        <g class="perturbseq-detail-high" aria-label="zoom labels">
-          <rect class="perturbseq-callout" x="334" y="116" width="230" height="56" rx="8"></rect>
-          <text class="perturbseq-small" x="350" y="140">Zoom depth reveals the molecular site:</text>
-          <text class="perturbseq-small" x="350" y="158">sgRNA-dCas9-KRAB at target DNA/TSS</text>
-        </g>
-      </g>
-    </svg>
-
   </div>
 
   <div class="perturbseq-info">
-    <div class="perturbseq-focus-label">Whole cell</div>
-    <p class="perturbseq-focus-text">One perturbed cell remains in view: membrane, nucleus, organelles, sgRNA cargo, mRNA molecules, and capture barcode are all part of the same scene.</p>
+    <div class="perturbseq-focus-label">Semi-transparent nucleus</div>
+    <p class="perturbseq-focus-text">A transparent eukaryotic nucleus contains diffuse chromosome territories rather than condensed X-shaped chromosomes.</p>
   </div>
 </div>
 

@@ -15,16 +15,34 @@
       Object.assign(
         {
           color,
-          roughness: 0.62,
-          metalness: 0.03,
+          roughness: 0.66,
+          metalness: 0.02,
         },
         options || {}
       )
     );
   }
 
+  function addTube(THREE, group, points, color, radius, options) {
+    const curve = new THREE.CatmullRomCurve3(points.map((point) => new THREE.Vector3(point[0], point[1], point[2])));
+    const geometry = new THREE.TubeGeometry(curve, 120, radius, 14, false);
+    const mesh = new THREE.Mesh(geometry, makeMaterial(THREE, color, options));
+    group.add(mesh);
+    return mesh;
+  }
+
+  function addCylinderBetween(THREE, group, start, end, radius, color, options) {
+    const midpoint = new THREE.Vector3().addVectors(start, end).multiplyScalar(0.5);
+    const direction = new THREE.Vector3().subVectors(end, start);
+    const mesh = new THREE.Mesh(new THREE.CylinderGeometry(radius, radius, direction.length(), 10), makeMaterial(THREE, color, options));
+    mesh.position.copy(midpoint);
+    mesh.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), direction.normalize());
+    group.add(mesh);
+    return mesh;
+  }
+
   function addTextSprite(THREE, text, options) {
-    const settings = Object.assign({ width: 512, height: 128, fontSize: 34, scale: [1.9, 0.48, 1] }, options || {});
+    const settings = Object.assign({ width: 512, height: 128, fontSize: 34, scale: [1.65, 0.42, 1] }, options || {});
     const canvas = document.createElement("canvas");
     canvas.width = settings.width;
     canvas.height = settings.height;
@@ -32,7 +50,7 @@
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.font = `600 ${settings.fontSize}px system-ui, -apple-system, Segoe UI, sans-serif`;
     ctx.fillStyle = colorVar("--global-text-color", "#232323");
-    ctx.fillText(text, 22, settings.height * 0.62);
+    ctx.fillText(text, 20, settings.height * 0.62);
 
     const texture = new THREE.CanvasTexture(canvas);
     const material = new THREE.SpriteMaterial({ map: texture, transparent: true });
@@ -41,299 +59,254 @@
     return sprite;
   }
 
-  function addLabel(THREE, scene, text, position, target) {
+  function addLabel(THREE, group, text, position, stage) {
     const sprite = addTextSprite(THREE, text);
     sprite.position.copy(position);
-    scene.add(sprite);
-
-    if (target) {
-      const line = addTube(
-        THREE,
-        scene,
-        [
-          [position.x - 0.24, position.y - 0.08, position.z],
-          [target.x, target.y, target.z],
-        ],
-        "#596579",
-        0.01
-      );
-      line.material.transparent = true;
-      line.material.opacity = 0.62;
-    }
-
-    return sprite;
-  }
-
-  function addCylinderBetween(THREE, group, start, end, radius, color) {
-    const midpoint = new THREE.Vector3().addVectors(start, end).multiplyScalar(0.5);
-    const direction = new THREE.Vector3().subVectors(end, start);
-    const mesh = new THREE.Mesh(new THREE.CylinderGeometry(radius, radius, direction.length(), 10), makeMaterial(THREE, color));
-    mesh.position.copy(midpoint);
-    mesh.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), direction.normalize());
-    group.add(mesh);
-    return mesh;
-  }
-
-  function addTube(THREE, group, points, color, radius) {
-    const curve = new THREE.CatmullRomCurve3(points.map((point) => new THREE.Vector3(point[0], point[1], point[2])));
-    const geometry = new THREE.TubeGeometry(curve, 80, radius, 12, false);
-    const mesh = new THREE.Mesh(geometry, makeMaterial(THREE, color));
-    group.add(mesh);
-    return mesh;
-  }
-
-  function addNucleotideLabel(THREE, group, base, position) {
-    const sprite = addTextSprite(THREE, base, { width: 96, height: 96, fontSize: 46, scale: [0.18, 0.18, 1] });
-    sprite.position.copy(position);
+    sprite.userData.stage = stage;
     group.add(sprite);
     return sprite;
   }
 
-  function addDnaSequence(THREE, group, colors) {
-    const dna = new THREE.Group();
-    const bases = [
-      ["A", "T"],
-      ["C", "G"],
-      ["G", "C"],
-      ["T", "A"],
-      ["A", "T"],
-      ["G", "C"],
-      ["C", "G"],
-      ["T", "A"],
-      ["G", "C"],
-      ["A", "T"],
-      ["C", "G"],
-      ["G", "C"],
-      ["T", "A"],
-      ["A", "T"],
-      ["C", "G"],
-      ["G", "C"],
-    ];
-    const baseColors = { A: "#4c8bd6", T: "#d6a33f", C: "#4da878", G: "#bd6a9a" };
-    const strandA = [];
-    const strandB = [];
-    const sugarMaterial = makeMaterial(THREE, "#d8e8ff", { transparent: true, opacity: 0.88 });
-
-    bases.forEach((pair, index) => {
-      const t = index / (bases.length - 1);
-      const x = -1.46 + t * 2.15;
-      const phase = index * 0.82;
-      const y = 0.08 + Math.sin(phase) * 0.18;
-      const z = 0.14 + Math.cos(phase) * 0.18;
-      const opposite = new THREE.Vector3(x, 0.08 - Math.sin(phase) * 0.18, 0.14 - Math.cos(phase) * 0.18);
-      const first = new THREE.Vector3(x, y, z);
-      strandA.push([first.x, first.y, first.z]);
-      strandB.push([opposite.x, opposite.y, opposite.z]);
-
-      addCylinderBetween(THREE, dna, first, opposite, 0.012, "#b8c2d3");
-
-      [first, opposite].forEach((point, side) => {
-        const base = pair[side];
-        const sugar = new THREE.Mesh(new THREE.SphereGeometry(0.035, 12, 8), sugarMaterial);
-        sugar.position.copy(point);
-        dna.add(sugar);
-
-        const basePoint = point.clone().lerp(side === 0 ? opposite : first, 0.38);
-        const baseMesh = new THREE.Mesh(new THREE.SphereGeometry(0.046, 16, 10), makeMaterial(THREE, baseColors[base]));
-        baseMesh.position.copy(basePoint);
-        dna.add(baseMesh);
-
-        if (index % 2 === 0) {
-          addNucleotideLabel(THREE, dna, base, basePoint.clone().add(new THREE.Vector3(0, side === 0 ? 0.08 : -0.08, 0.03)));
-        }
-      });
+  function setGroupOpacity(group, opacity) {
+    group.visible = opacity > 0.001;
+    group.traverse((object) => {
+      if (!object.material) return;
+      object.material.transparent = opacity < 1 || object.material.transparent;
+      object.material.opacity = object.userData.baseOpacity == null ? opacity : object.userData.baseOpacity * opacity;
     });
-
-    addTube(THREE, dna, strandA, colors.blue, 0.018);
-    addTube(THREE, dna, strandB, colors.blue, 0.018);
-    dna.position.set(0.02, 0.1, 0.36);
-    dna.rotation.set(-0.08, 0.05, 0.16);
-    group.add(dna);
-    return dna;
   }
 
-  function addNucleosome(THREE, group, position, rotation, colors) {
-    const nucleosome = new THREE.Group();
-    const histoneMaterial = makeMaterial(THREE, colors.purple, { transparent: true, opacity: 0.82 });
-    const coreOffsets = [
-      [-0.08, 0.04, 0.06],
-      [0.08, 0.04, 0.06],
-      [-0.08, -0.04, 0.06],
-      [0.08, -0.04, 0.06],
-      [-0.08, 0.04, -0.06],
-      [0.08, 0.04, -0.06],
-      [-0.08, -0.04, -0.06],
-      [0.08, -0.04, -0.06],
+  function addHistoneOctamer(THREE, group, position, scale, colors) {
+    const octamer = new THREE.Group();
+    const subunitColors = [colors.histoneA, colors.histoneB, colors.histoneC, colors.histoneD];
+    const offsets = [
+      [-0.12, 0.1, 0.08],
+      [0.12, 0.1, 0.08],
+      [-0.12, -0.1, 0.08],
+      [0.12, -0.1, 0.08],
+      [-0.12, 0.1, -0.08],
+      [0.12, 0.1, -0.08],
+      [-0.12, -0.1, -0.08],
+      [0.12, -0.1, -0.08],
     ];
 
-    coreOffsets.forEach(([x, y, z]) => {
-      const histone = new THREE.Mesh(new THREE.SphereGeometry(0.08, 18, 12), histoneMaterial);
-      histone.position.set(x, y, z);
-      nucleosome.add(histone);
+    offsets.forEach(([x, y, z], index) => {
+      const subunit = new THREE.Mesh(new THREE.SphereGeometry(0.115, 28, 18), makeMaterial(THREE, subunitColors[index % subunitColors.length]));
+      subunit.scale.set(1.05, 0.86, 0.92);
+      subunit.position.set(x, y, z);
+      octamer.add(subunit);
     });
 
-    const wrapA = [];
-    const wrapB = [];
-    for (let i = 0; i <= 54; i++) {
-      const t = (i / 54) * Math.PI * 2.05;
-      const x = -0.2 + (i / 54) * 0.4;
-      wrapA.push([x, Math.cos(t) * 0.22, Math.sin(t) * 0.22]);
-      wrapB.push([x, Math.cos(t + Math.PI) * 0.22, Math.sin(t + Math.PI) * 0.22]);
-    }
+    octamer.position.copy(position);
+    octamer.scale.setScalar(scale);
+    group.add(octamer);
+    return octamer;
+  }
 
-    addTube(THREE, nucleosome, wrapA, colors.blue, 0.012);
-    addTube(THREE, nucleosome, wrapB, colors.blue, 0.012);
+  function addWrappedDna(THREE, group, radius, width, turns, colors) {
+    const strandA = [];
+    const strandB = [];
+    const steps = 120;
+    for (let i = 0; i <= steps; i++) {
+      const t = (i / steps) * Math.PI * 2 * turns;
+      const x = -width / 2 + (i / steps) * width;
+      strandA.push([x, Math.cos(t) * radius, Math.sin(t) * radius]);
+      strandB.push([x, Math.cos(t + Math.PI) * radius, Math.sin(t + Math.PI) * radius]);
+    }
+    addTube(THREE, group, strandA, colors.dnaBlue, 0.018);
+    addTube(THREE, group, strandB, colors.dnaWhite, 0.014);
+  }
+
+  function addNucleosome(THREE, group, position, rotation, scale, colors) {
+    const nucleosome = new THREE.Group();
+    addHistoneOctamer(THREE, nucleosome, new THREE.Vector3(0, 0, 0), 1, colors);
+    addWrappedDna(THREE, nucleosome, 0.27, 0.48, 1.75, colors);
     nucleosome.position.copy(position);
     nucleosome.rotation.set(rotation.x, rotation.y, rotation.z);
+    nucleosome.scale.setScalar(scale);
     group.add(nucleosome);
     return nucleosome;
   }
 
-  function addChromatinContext(THREE, group, colors) {
-    const chromatin = new THREE.Group();
-    addTube(
-      THREE,
-      chromatin,
-      [
-        [-1.56, -0.36, -0.02],
-        [-1.18, -0.26, 0.22],
-        [-0.88, -0.1, 0.38],
-        [-0.5, 0.04, 0.44],
-      ],
-      "#8aa2c5",
-      0.018
+  function addChromosomeTerritory(THREE, group, colors) {
+    const territory = new THREE.Group();
+    const shell = new THREE.Mesh(
+      new THREE.SphereGeometry(1.2, 48, 28),
+      makeMaterial(THREE, colors.territory, {
+        transparent: true,
+        opacity: 0.32,
+        side: THREE.DoubleSide,
+        depthWrite: false,
+      })
     );
-    addTube(
-      THREE,
-      chromatin,
-      [
-        [0.62, 0.24, 0.48],
-        [0.9, 0.16, 0.26],
-        [1.2, 0.0, 0.1],
-        [1.42, -0.18, -0.04],
-      ],
-      "#8aa2c5",
-      0.018
-    );
+    shell.userData.baseOpacity = 0.32;
+    shell.scale.set(1.22, 0.72, 0.86);
+    shell.position.set(-0.38, 0.08, 0.08);
+    territory.add(shell);
 
-    addNucleosome(THREE, chromatin, new THREE.Vector3(-1.34, -0.3, 0.08), new THREE.Euler(0.2, -0.3, 0.7), colors);
-    addNucleosome(THREE, chromatin, new THREE.Vector3(-1.02, -0.14, 0.3), new THREE.Euler(-0.2, 0.3, -0.1), colors);
-    addNucleosome(THREE, chromatin, new THREE.Vector3(1.12, -0.06, 0.08), new THREE.Euler(0.1, 0.4, -0.8), colors);
+    for (let loop = 0; loop < 11; loop++) {
+      const points = [];
+      const phase = loop * 0.7;
+      const yBias = -0.42 + loop * 0.085;
+      for (let i = 0; i < 8; i++) {
+        const t = i / 7;
+        points.push([
+          -1.38 + t * 2.05 + Math.sin(t * Math.PI * 3 + phase) * 0.18,
+          yBias + Math.sin(t * Math.PI * 2.2 + phase) * 0.22,
+          0.02 + Math.cos(t * Math.PI * 2.5 + phase) * 0.38,
+        ]);
+      }
+      const tube = addTube(THREE, territory, points, loop % 3 === 0 ? colors.dnaBlue : "#6f8fba", 0.026, { transparent: true, opacity: 0.9 });
+      tube.userData.baseOpacity = 0.9;
+      tube.userData.loopPhase = phase;
+    }
 
-    const openRegion = new THREE.Group();
-    addTube(
-      THREE,
-      openRegion,
-      [
-        [-0.5, 0.04, 0.44],
-        [-0.28, 0.16, 0.58],
-        [-0.04, 0.22, 0.64],
-        [0.22, 0.2, 0.58],
-        [0.44, 0.16, 0.5],
-        [0.62, 0.24, 0.48],
-      ],
-      colors.blue,
-      0.024
-    );
-    addTube(
-      THREE,
-      openRegion,
-      [
-        [-0.46, -0.02, 0.36],
-        [-0.24, 0.08, 0.46],
-        [0.0, 0.13, 0.52],
-        [0.24, 0.12, 0.48],
-        [0.46, 0.1, 0.4],
-        [0.66, 0.2, 0.4],
-      ],
-      "#a7bdd9",
-      0.016
-    );
-    [-0.22, 0.02, 0.26].forEach((x, index) => {
-      const basePair = new THREE.Mesh(new THREE.CylinderGeometry(0.01, 0.01, 0.26, 8), makeMaterial(THREE, index === 1 ? colors.green : "#a7bdd9"));
-      basePair.position.set(x, 0.15 + index * 0.02, 0.54 + index * 0.02);
-      basePair.rotation.set(1.22, 0.18, Math.PI / 2);
-      openRegion.add(basePair);
-    });
-    chromatin.add(openRegion);
-
-    group.add(chromatin);
-    return { chromatin, openRegion };
+    group.add(territory);
+    return territory;
   }
 
-  function addReadoutDetail(THREE, group, colors) {
-    const readout = new THREE.Group();
-    const beadMaterial = makeMaterial(THREE, "#edf6ff", { transparent: true, opacity: 0.92 });
-    const barcodeColors = [colors.blue, colors.green, colors.gold, colors.purple];
+  function addLoopDomain(THREE, group, colors) {
+    const loops = new THREE.Group();
+    const anchorMaterial = makeMaterial(THREE, colors.anchor, { transparent: true, opacity: 0.9 });
 
-    const bead = new THREE.Mesh(new THREE.SphereGeometry(0.22, 32, 18), beadMaterial);
-    bead.position.set(1.1, -1.08, 0.18);
-    readout.add(bead);
+    for (let i = 0; i < 5; i++) {
+      const x = -0.9 + i * 0.45;
+      const height = 0.65 + Math.sin(i * 1.3) * 0.18;
+      const depth = i % 2 === 0 ? 0.28 : -0.24;
+      addTube(
+        THREE,
+        loops,
+        [
+          [x - 0.18, -0.4, depth * 0.4],
+          [x - 0.32, 0.04, depth],
+          [x, height, depth * 0.6],
+          [x + 0.32, 0.02, -depth],
+          [x + 0.18, -0.4, -depth * 0.3],
+        ],
+        colors.dnaBlue,
+        0.026,
+        { transparent: true, opacity: 0.86 }
+      ).userData.baseOpacity = 0.86;
 
-    barcodeColors.forEach((color, index) => {
-      const band = new THREE.Mesh(new THREE.TorusGeometry(0.235 + index * 0.012, 0.008, 8, 48), makeMaterial(THREE, color));
-      band.position.copy(bead.position);
-      band.rotation.set(Math.PI / 2, 0.2 + index * 0.28, 0.18);
-      readout.add(band);
-    });
+      [-0.18, 0.18].forEach((dx) => {
+        const anchor = new THREE.Mesh(new THREE.SphereGeometry(0.055, 18, 12), anchorMaterial);
+        anchor.position.set(x + dx, -0.42, dx < 0 ? depth * 0.35 : -depth * 0.25);
+        loops.add(anchor);
+      });
+    }
 
-    const umiMaterial = makeMaterial(THREE, colors.gold, { emissive: colors.gold, emissiveIntensity: 0.08 });
-    [
-      [0.72, -0.78, -0.16, "UMI"],
-      [1.48, -0.86, 0.28, "UMI"],
-      [0.92, -1.42, 0.44, "guide tag"],
-    ].forEach(([x, y, z, label]) => {
-      const tag = new THREE.Mesh(new THREE.BoxGeometry(label === "UMI" ? 0.16 : 0.28, 0.07, 0.05), umiMaterial);
-      tag.position.set(x, y, z);
-      tag.rotation.set(0.1, 0.35, -0.22);
-      readout.add(tag);
-    });
+    loops.position.set(-0.1, 0.02, 0.22);
+    group.add(loops);
+    return loops;
+  }
 
-    [
-      [
-        [0.48, -0.68, -0.2],
-        [0.78, -0.74, -0.08],
-        [1.02, -0.96, 0.08],
-        [1.18, -1.08, 0.18],
-      ],
-      [
-        [1.56, -0.78, 0.22],
-        [1.34, -0.92, 0.18],
-        [1.12, -1.06, 0.18],
-        [0.9, -1.18, 0.08],
-      ],
-      [
-        [0.76, -1.46, 0.52],
-        [0.94, -1.34, 0.36],
-        [1.08, -1.16, 0.2],
-      ],
-    ].forEach((points, index) => {
-      const tube = addTube(THREE, readout, points, index === 2 ? colors.green : "#6f7f91", 0.02);
-      tube.material.transparent = true;
-      tube.material.opacity = 0.88;
-    });
+  function addBeadsOnStringFiber(THREE, group, colors) {
+    const fiber = new THREE.Group();
+    const centers = [];
+    for (let i = 0; i < 8; i++) {
+      const t = i / 7;
+      centers.push(new THREE.Vector3(-1.05 + t * 2.1, Math.sin(t * Math.PI * 2.2) * 0.16, Math.cos(t * Math.PI * 2.8) * 0.12));
+    }
 
-    const polyAMaterial = makeMaterial(THREE, "#f5f8ff");
-    [
-      [0.44, -0.68, -0.22],
-      [1.6, -0.78, 0.24],
-    ].forEach(([x, y, z]) => {
-      for (let i = 0; i < 5; i++) {
-        const beadA = new THREE.Mesh(new THREE.SphereGeometry(0.025, 10, 8), polyAMaterial);
-        beadA.position.set(x - i * 0.04, y + i * 0.008, z);
-        readout.add(beadA);
+    centers.forEach((center, index) => {
+      addNucleosome(THREE, fiber, center, new THREE.Euler(0.2 + index * 0.12, index * 0.38, -0.15 + index * 0.18), 0.45, colors);
+      if (index < centers.length - 1) {
+        const next = centers[index + 1];
+        addTube(
+          THREE,
+          fiber,
+          [
+            [center.x + 0.12, center.y, center.z],
+            [(center.x + next.x) / 2, (center.y + next.y) / 2 + 0.12, (center.z + next.z) / 2],
+            [next.x - 0.12, next.y, next.z],
+          ],
+          colors.dnaWhite,
+          0.016
+        );
       }
     });
 
-    const guideTag = new THREE.Mesh(
-      new THREE.SphereGeometry(0.07, 18, 12),
-      makeMaterial(THREE, colors.green, { emissive: colors.green, emissiveIntensity: 0.18 })
-    );
-    guideTag.position.set(0.84, -1.34, 0.42);
-    readout.add(guideTag);
+    fiber.position.set(0.24, -0.28, 0.32);
+    group.add(fiber);
+    return fiber;
+  }
 
-    group.add(readout);
-    return readout;
+  function addSingleNucleosomeDetail(THREE, group, colors) {
+    const detail = new THREE.Group();
+    addNucleosome(THREE, detail, new THREE.Vector3(0, 0, 0), new THREE.Euler(0.05, -0.4, 0.2), 1.35, colors);
+    addTube(
+      THREE,
+      detail,
+      [
+        [-0.78, -0.04, -0.14],
+        [-0.58, 0.08, -0.04],
+        [-0.42, 0.04, 0.04],
+      ],
+      colors.dnaWhite,
+      0.018
+    );
+    addTube(
+      THREE,
+      detail,
+      [
+        [0.42, -0.02, 0.04],
+        [0.58, -0.12, 0.14],
+        [0.82, -0.06, 0.2],
+      ],
+      colors.dnaBlue,
+      0.018
+    );
+    detail.position.set(0.92, -0.42, 0.5);
+    group.add(detail);
+    return detail;
+  }
+
+  function addDoubleHelixDetail(THREE, group, colors) {
+    const helix = new THREE.Group();
+    const strandA = [];
+    const strandB = [];
+    const basePairs = [
+      ["A", "T"],
+      ["C", "G"],
+      ["G", "C"],
+      ["T", "A"],
+      ["A", "T"],
+      ["G", "C"],
+      ["C", "G"],
+      ["T", "A"],
+      ["G", "C"],
+      ["A", "T"],
+      ["C", "G"],
+      ["G", "C"],
+      ["T", "A"],
+      ["A", "T"],
+    ];
+    const baseColors = { A: "#4e8bd6", T: "#d9b95b", C: "#49a978", G: "#bd6a9a" };
+
+    basePairs.forEach((pair, index) => {
+      const t = index / (basePairs.length - 1);
+      const x = -0.9 + t * 1.8;
+      const phase = index * 0.82;
+      const first = new THREE.Vector3(x, Math.cos(phase) * 0.22, Math.sin(phase) * 0.22);
+      const second = new THREE.Vector3(x, Math.cos(phase + Math.PI) * 0.22, Math.sin(phase + Math.PI) * 0.22);
+      strandA.push([first.x, first.y, first.z]);
+      strandB.push([second.x, second.y, second.z]);
+      addCylinderBetween(THREE, helix, first, second, 0.012, "#bcc9d8");
+
+      [first, second].forEach((point, side) => {
+        const base = pair[side];
+        const baseMesh = new THREE.Mesh(new THREE.SphereGeometry(0.045, 16, 10), makeMaterial(THREE, baseColors[base]));
+        baseMesh.position.copy(point.clone().lerp(side === 0 ? second : first, 0.38));
+        helix.add(baseMesh);
+      });
+    });
+
+    addTube(THREE, helix, strandA, colors.dnaBlue, 0.024);
+    addTube(THREE, helix, strandB, colors.dnaWhite, 0.02);
+    helix.position.set(1.54, -0.55, 0.72);
+    helix.rotation.set(0.02, -0.12, 0.08);
+    group.add(helix);
+    return helix;
   }
 
   function initViewer(THREE, root) {
@@ -350,197 +323,130 @@
     if (!stage || !canvas) return;
 
     const colors = {
-      blue: "#2f6fbd",
-      cyan: "#2daecb",
-      green: "#3b9467",
-      gold: "#d39b2c",
-      red: "#c85c5c",
-      purple: "#7d62b8",
+      dnaBlue: "#2f6fbd",
+      dnaWhite: "#dbeafe",
+      territory: "#6f7fd3",
+      anchor: "#6d7890",
+      histoneA: "#7d62b8",
+      histoneB: "#9a77d2",
+      histoneC: "#6b8ac9",
+      histoneD: "#b57cb6",
+      nucleus: "#7fc7df",
     };
 
     const scene = new THREE.Scene();
-    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, preserveDrawingBuffer: true });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
     renderer.outputColorSpace = THREE.SRGBColorSpace;
+    renderer.setClearColor(0xf7fbff, 0.78);
 
-    const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 100);
-    const cell = new THREE.Group();
+    const camera = new THREE.PerspectiveCamera(36, 1, 0.1, 100);
+    const world = new THREE.Group();
     const labels = new THREE.Group();
-    const coarseChromatinLayer = new THREE.Group();
-    const fineTargetLayer = new THREE.Group();
-    const coarseLabels = new THREE.Group();
-    const fineLabels = new THREE.Group();
-    scene.add(cell, labels);
-    labels.add(coarseLabels, fineLabels);
-    cell.add(coarseChromatinLayer, fineTargetLayer);
+    scene.add(world, labels);
 
-    scene.add(new THREE.HemisphereLight(0xffffff, 0x8aa0b8, 2.1));
-    const keyLight = new THREE.DirectionalLight(0xffffff, 2.7);
+    scene.add(new THREE.HemisphereLight(0xffffff, 0x9fb1c9, 2.2));
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.85);
+    scene.add(ambientLight);
+    const keyLight = new THREE.DirectionalLight(0xffffff, 2.8);
     keyLight.position.set(4, 5, 7);
     scene.add(keyLight);
-    const rimLight = new THREE.DirectionalLight(0x8fd5ff, 1.2);
+    const rimLight = new THREE.DirectionalLight(0x9bdfff, 1.25);
     rimLight.position.set(-5, -2, 4);
     scene.add(rimLight);
 
-    const membrane = new THREE.Mesh(
-      new THREE.SphereGeometry(2.8, 80, 48),
-      makeMaterial(THREE, colors.cyan, {
+    const nucleusGroup = new THREE.Group();
+    const territoryGroup = new THREE.Group();
+    const loopGroup = new THREE.Group();
+    const fiberGroup = new THREE.Group();
+    const nucleosomeGroup = new THREE.Group();
+    const helixGroup = new THREE.Group();
+    world.add(nucleusGroup, territoryGroup, loopGroup, fiberGroup, nucleosomeGroup, helixGroup);
+
+    const nucleus = new THREE.Mesh(
+      new THREE.SphereGeometry(2.35, 72, 42),
+      makeMaterial(THREE, colors.nucleus, {
         transparent: true,
-        opacity: 0.22,
+        opacity: 0.36,
         side: THREE.DoubleSide,
         depthWrite: false,
       })
     );
-    membrane.scale.set(1.28, 0.86, 0.72);
-    cell.add(membrane);
+    nucleus.userData.baseOpacity = 0.36;
+    nucleus.scale.set(1.16, 0.82, 0.76);
+    nucleusGroup.add(nucleus);
 
-    const membraneWire = new THREE.Mesh(
-      new THREE.SphereGeometry(2.83, 28, 18),
-      new THREE.MeshBasicMaterial({ color: colors.cyan, wireframe: true, transparent: true, opacity: 0.14 })
+    const nucleusWire = new THREE.Mesh(
+      new THREE.SphereGeometry(2.38, 34, 20),
+      new THREE.MeshBasicMaterial({ color: colors.nucleus, wireframe: true, transparent: true, opacity: 0.32 })
     );
-    membraneWire.scale.copy(membrane.scale);
-    cell.add(membraneWire);
+    nucleusWire.scale.copy(nucleus.scale);
+    nucleusWire.userData.baseOpacity = 0.32;
+    nucleusGroup.add(nucleusWire);
 
-    const nucleus = new THREE.Mesh(
-      new THREE.SphereGeometry(1.35, 56, 36),
-      makeMaterial(THREE, colors.blue, { transparent: true, opacity: 0.42, depthWrite: false })
-    );
-    nucleus.position.set(-0.45, 0.05, 0.05);
-    nucleus.scale.set(1.12, 0.82, 0.78);
-    cell.add(nucleus);
+    const territory = addChromosomeTerritory(THREE, territoryGroup, colors);
+    const loops = addLoopDomain(THREE, loopGroup, colors);
+    const fiber = addBeadsOnStringFiber(THREE, fiberGroup, colors);
+    const nucleosome = addSingleNucleosomeDetail(THREE, nucleosomeGroup, colors);
+    const helix = addDoubleHelixDetail(THREE, helixGroup, colors);
 
-    const nucleolus = new THREE.Mesh(
-      new THREE.SphereGeometry(0.32, 32, 18),
-      makeMaterial(THREE, colors.purple, { transparent: true, opacity: 0.78 })
-    );
-    nucleolus.position.set(-0.92, -0.28, 0.34);
-    cell.add(nucleolus);
-
-    addChromatinContext(THREE, coarseChromatinLayer, colors);
-    const dnaSequence = addDnaSequence(THREE, fineTargetLayer, colors);
-
-    const cas9 = new THREE.Mesh(new THREE.SphereGeometry(0.18, 32, 18), makeMaterial(THREE, colors.blue));
-    cas9.position.set(-0.2, 0.38, 0.54);
-    fineTargetLayer.add(cas9);
-
-    const krab = new THREE.Mesh(new THREE.BoxGeometry(0.34, 0.2, 0.18), makeMaterial(THREE, colors.purple));
-    krab.position.set(0.04, 0.54, 0.58);
-    krab.rotation.set(0.2, 0.4, 0.15);
-    fineTargetLayer.add(krab);
-
-    addTube(
-      THREE,
-      fineTargetLayer,
-      [
-        [-0.48, 0.04, 0.48],
-        [-0.34, 0.02, 0.7],
-        [-0.1, 0.16, 0.67],
-        [0.03, 0.36, 0.56],
-      ],
-      colors.green,
-      0.025
-    );
-
-    const rnap = new THREE.Mesh(new THREE.CapsuleGeometry(0.14, 0.42, 8, 24), makeMaterial(THREE, colors.gold));
-    rnap.position.set(0.82, 0.18, 0.43);
-    rnap.rotation.z = Math.PI / 2;
-    fineTargetLayer.add(rnap);
-
-    addTube(
-      THREE,
-      fineTargetLayer,
-      [
-        [0.98, 0.15, 0.4],
-        [1.28, 0.12, 0.53],
-        [1.54, -0.02, 0.36],
-      ],
-      colors.red,
-      0.024
-    ).material.opacity = 0.45;
-
-    const mitoMaterial = makeMaterial(THREE, colors.red, { transparent: true, opacity: 0.82 });
-    [
-      [-1.95, 0.74, -0.56, -0.7],
-      [1.7, -0.82, 0.6, 0.45],
-    ].forEach(([x, y, z, rot]) => {
-      const mito = new THREE.Mesh(new THREE.CapsuleGeometry(0.18, 0.82, 12, 28), mitoMaterial);
-      mito.position.set(x, y, z);
-      mito.rotation.set(Math.PI / 2, 0.2, rot);
-      cell.add(mito);
-    });
-
-    const er = new THREE.Group();
-    addTube(
-      THREE,
-      er,
-      [
-        [0.64, 0.58, -0.46],
-        [1.1, 0.74, -0.24],
-        [1.52, 0.42, 0.0],
-        [1.28, 0.08, 0.3],
-        [0.76, 0.16, 0.12],
-      ],
-      colors.green,
-      0.04
-    );
-    addTube(
-      THREE,
-      er,
-      [
-        [0.58, 0.34, -0.3],
-        [1.02, 0.38, -0.1],
-        [1.24, 0.12, 0.1],
-        [0.9, -0.08, 0.26],
-      ],
-      colors.green,
-      0.035
-    );
-    cell.add(er);
-
-    const readoutDetail = addReadoutDetail(THREE, cell, colors);
-
-    addLabel(THREE, coarseLabels, "cell membrane", new THREE.Vector3(-2.78, 1.7, 0), new THREE.Vector3(-2.48, 0.86, 0.02));
-    addLabel(THREE, coarseLabels, "nucleus", new THREE.Vector3(-1.95, 1.28, 0.28), nucleus.position);
-    addLabel(THREE, coarseLabels, "chromatin fiber", new THREE.Vector3(-2.08, 0.55, 1.08), new THREE.Vector3(-0.72, -0.05, 0.34));
-    addLabel(THREE, coarseLabels, "histone-wrapped DNA", new THREE.Vector3(1.18, 0.64, 0.84), new THREE.Vector3(1.12, -0.06, 0.08));
-    addLabel(
-      THREE,
-      coarseLabels,
-      "barcode + UMI readout",
-      new THREE.Vector3(0.92, -1.78, 0.38),
-      readoutDetail.position.clone().add(new THREE.Vector3(1.08, -1.08, 0.18))
-    );
-    addLabel(THREE, fineLabels, "open DNA target", new THREE.Vector3(-0.7, 1.08, 1.22), dnaSequence.position);
-    addLabel(THREE, fineLabels, "dCas9-KRAB + sgRNA", new THREE.Vector3(0.26, 1.1, 1.02), cas9.position);
+    addLabel(THREE, labels, "nucleus", new THREE.Vector3(-2.62, 1.46, 0.2), "nucleus");
+    addLabel(THREE, labels, "chromosome territory", new THREE.Vector3(-1.85, 0.78, 0.95), "territory");
+    addLabel(THREE, labels, "loop domains", new THREE.Vector3(-0.9, 0.98, 0.74), "loops");
+    addLabel(THREE, labels, "beads-on-a-string", new THREE.Vector3(0.02, -0.82, 0.82), "fiber");
+    addLabel(THREE, labels, "nucleosome", new THREE.Vector3(0.62, 0.24, 1.12), "nucleosome");
+    addLabel(THREE, labels, "DNA double helix", new THREE.Vector3(1.1, -0.98, 1.1), "helix");
 
     const focuses = {
-      cell: {
-        label: "Whole 3D cell",
-        text: "Drag to rotate one perturbed cell. The whole-cell view keeps the chromatin fiber inside the nucleus, with a short accessible DNA region visible before molecular zoom-in.",
+      nucleus: {
+        label: "Semi-transparent nucleus",
+        text: "A transparent eukaryotic nucleus contains diffuse chromosome territories rather than condensed X-shaped chromosomes.",
         target: new THREE.Vector3(0, 0, 0),
         distance: 7.2,
       },
-      binding: {
-        label: "Accessible DNA sequence",
-        text: "Zooming into the accessible region reveals the paired DNA bases, sgRNA pairing, and the dCas9-KRAB complex bound near RNA polymerase.",
-        target: new THREE.Vector3(0.12, 0.42, 0.58),
-        distance: 2.4,
+      territory: {
+        label: "Chromosome territory",
+        text: "One territory is shown as a soft volume filled with flexible chromatin paths occupying a nuclear subregion.",
+        target: new THREE.Vector3(-0.42, 0.08, 0.12),
+        distance: 4.35,
       },
-      readout: {
-        label: "Transcript and guide readout",
-        text: "The readout area shows a capture bead with cell barcode bands, UMI tags, poly-A mRNA molecules, and a guide tag that links perturbation identity to the same cell.",
-        target: new THREE.Vector3(1.02, -0.98, 0.18),
-        distance: 3.4,
+      loops: {
+        label: "Folded chromatin loops",
+        text: "Higher-order chromatin is represented as irregular dynamic loops, avoiding an over-regular solenoid fiber.",
+        target: new THREE.Vector3(-0.12, 0.08, 0.28),
+        distance: 2.75,
+      },
+      fiber: {
+        label: "Open nucleosome fiber",
+        text: "The loop resolves into an open beads-on-a-string fiber: nucleosomes connected by curved linker DNA.",
+        target: new THREE.Vector3(0.34, -0.22, 0.34),
+        distance: 1.62,
+      },
+      nucleosome: {
+        label: "Single nucleosome",
+        text: "DNA wraps around a histone octamer with eight rounded protein subunits.",
+        target: new THREE.Vector3(0.92, -0.42, 0.5),
+        distance: 0.95,
+      },
+      helix: {
+        label: "DNA double helix",
+        text: "At the finest scale, the blue-white DNA strands separate into a smooth double helix with visible base pairs.",
+        target: new THREE.Vector3(1.54, -0.55, 0.72),
+        distance: 0.72,
       },
     };
 
+    const stageOrder = ["nucleus", "territory", "loops", "fiber", "nucleosome", "helix"];
     const state = {
-      target: focuses.cell.target.clone(),
-      distance: focuses.cell.distance,
-      yaw: -0.45,
-      pitch: 0.2,
+      target: focuses.nucleus.target.clone(),
+      cameraTarget: focuses.nucleus.target.clone(),
+      distance: focuses.nucleus.distance,
+      cameraDistance: focuses.nucleus.distance,
+      yaw: -0.42,
+      pitch: 0.22,
       dragging: null,
-      focus: "cell",
+      focus: "nucleus",
+      time: 0,
     };
 
     function resize() {
@@ -550,35 +456,48 @@
       renderer.setSize(width, height, false);
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
-      labels.visible = camera.aspect >= 0.75;
+      labels.visible = camera.aspect >= 0.78;
     }
 
-    function updateDetailVisibility() {
-      const showTargetDetail = state.focus === "binding" || state.distance <= 3.1;
-      fineTargetLayer.visible = showTargetDetail;
-      coarseChromatinLayer.visible = true;
-      fineLabels.visible = showTargetDetail && camera.aspect >= 0.75;
-      coarseLabels.visible = camera.aspect >= 0.75;
+    function updateStageVisibility() {
+      const index = stageOrder.indexOf(state.focus);
+      const opacityByStage = [
+        [1, 0.85, 0.08, 0, 0, 0],
+        [0.65, 1, 0.25, 0, 0, 0],
+        [0.25, 0.55, 1, 0.25, 0, 0],
+        [0.12, 0.18, 0.45, 1, 0.35, 0.05],
+        [0.05, 0.08, 0.1, 0.45, 1, 0.25],
+        [0.02, 0.03, 0.05, 0.15, 0.38, 1],
+      ];
+      const opacities = opacityByStage[index] || opacityByStage[0];
+      setGroupOpacity(nucleusGroup, opacities[0]);
+      setGroupOpacity(territoryGroup, opacities[1]);
+      setGroupOpacity(loopGroup, opacities[2]);
+      setGroupOpacity(fiberGroup, opacities[3]);
+      setGroupOpacity(nucleosomeGroup, opacities[4]);
+      setGroupOpacity(helixGroup, opacities[5]);
+      labels.children.forEach((label) => {
+        label.visible = camera.aspect >= 0.78 && index < 4 && label.userData.stage === state.focus;
+      });
     }
 
     function updateCamera() {
-      state.pitch = clamp(state.pitch, -1.1, 1.1);
-      state.distance = clamp(state.distance, 1.8, 9);
-      const displayDistance = state.distance * (camera.aspect < 0.75 ? 2.05 : 1);
+      state.pitch = clamp(state.pitch, -1.05, 1.05);
+      state.distance = clamp(state.distance, 0.56, 8.6);
+      const displayDistance = state.cameraDistance * (camera.aspect < 0.75 ? 1.95 : 1);
       const cosPitch = Math.cos(state.pitch);
       camera.position.set(
-        state.target.x + Math.sin(state.yaw) * cosPitch * displayDistance,
-        state.target.y + Math.sin(state.pitch) * displayDistance,
-        state.target.z + Math.cos(state.yaw) * cosPitch * displayDistance
+        state.cameraTarget.x + Math.sin(state.yaw) * cosPitch * displayDistance,
+        state.cameraTarget.y + Math.sin(state.pitch) * displayDistance,
+        state.cameraTarget.z + Math.cos(state.yaw) * cosPitch * displayDistance
       );
-      camera.lookAt(state.target);
-      if (status) status.textContent = `${Math.round((focuses.cell.distance / state.distance) * 100)}%`;
-      updateDetailVisibility();
+      camera.lookAt(state.cameraTarget);
+      if (status) status.textContent = `${Math.round((focuses.nucleus.distance / state.distance) * 100)}%`;
     }
 
     function setFocus(name) {
-      const focus = focuses[name] || focuses.cell;
-      state.focus = name in focuses ? name : "cell";
+      const focus = focuses[name] || focuses.nucleus;
+      state.focus = name in focuses ? name : "nucleus";
       state.target.copy(focus.target);
       state.distance = focus.distance;
       if (focusLabel) focusLabel.textContent = focus.label;
@@ -588,16 +507,28 @@
         button.classList.toggle("is-active", pressed);
         button.setAttribute("aria-pressed", pressed ? "true" : "false");
       });
-      updateCamera();
+      updateStageVisibility();
     }
 
     function render() {
+      state.time += 0.012;
+      state.cameraTarget.lerp(state.target, 0.055);
+      state.cameraDistance += (state.distance - state.cameraDistance) * 0.055;
+
+      territory.rotation.y = Math.sin(state.time * 0.45) * 0.05;
+      loops.rotation.z = Math.sin(state.time * 0.7) * 0.035;
+      loops.scale.y = 1 + Math.sin(state.time * 0.9) * 0.025;
+      fiber.rotation.y = Math.sin(state.time * 0.6) * 0.08;
+      nucleosome.rotation.y = Math.sin(state.time * 0.48) * 0.12;
+      helix.rotation.x = Math.sin(state.time * 0.55) * 0.1;
+
       labels.children.forEach((label) => {
         if (label.isSprite) label.quaternion.copy(camera.quaternion);
       });
-      cell.traverse((object) => {
+      world.traverse((object) => {
         if (object.isSprite) object.quaternion.copy(camera.quaternion);
       });
+      updateCamera();
       renderer.render(scene, camera);
       requestAnimationFrame(render);
     }
@@ -616,7 +547,6 @@
       state.pitch -= dy * 0.006;
       state.dragging.x = event.clientX;
       state.dragging.y = event.clientY;
-      updateCamera();
     });
 
     function clearDrag(event) {
@@ -634,7 +564,6 @@
       function (event) {
         event.preventDefault();
         state.distance *= event.deltaY < 0 ? 0.9 : 1.1;
-        updateCamera();
       },
       { passive: false }
     );
@@ -643,13 +572,14 @@
       button.addEventListener("click", () => setFocus(button.dataset.focusTarget));
     });
 
-    if (zoomIn) zoomIn.addEventListener("click", () => ((state.distance *= 0.84), updateCamera()));
-    if (zoomOut) zoomOut.addEventListener("click", () => ((state.distance *= 1.18), updateCamera()));
-    if (reset) reset.addEventListener("click", () => setFocus("cell"));
+    if (zoomIn) zoomIn.addEventListener("click", () => (state.distance *= 0.84));
+    if (zoomOut) zoomOut.addEventListener("click", () => (state.distance *= 1.18));
+    if (reset) reset.addEventListener("click", () => setFocus("nucleus"));
 
     window.addEventListener("resize", resize);
     resize();
-    setFocus("cell");
+    setFocus("nucleus");
+    updateCamera();
     render();
   }
 
@@ -670,7 +600,7 @@
       roots.forEach((root) => {
         root.classList.add("perturbseq-three-error");
         const focusText = root.querySelector(".perturbseq-focus-text");
-        if (focusText) focusText.textContent = "The 3D viewer could not load. Please refresh the page.";
+        if (focusText) focusText.textContent = "The 3D chromatin viewer could not load. Please refresh the page.";
       });
     }
   });
