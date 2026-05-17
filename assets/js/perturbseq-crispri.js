@@ -168,25 +168,28 @@
   function addLoopDomain(THREE, group, colors) {
     const loops = new THREE.Group();
     const anchorMaterial = makeMaterial(THREE, colors.anchor, { transparent: true, opacity: 0.9 });
+    const loopPath = [];
 
     for (let i = 0; i < 5; i++) {
       const x = -0.9 + i * 0.45;
       const height = 0.65 + Math.sin(i * 1.3) * 0.18;
       const depth = i % 2 === 0 ? 0.28 : -0.24;
-      addTube(
-        THREE,
-        loops,
-        [
-          [x - 0.18, -0.4, depth * 0.4],
-          [x - 0.32, 0.04, depth],
-          [x, height, depth * 0.6],
-          [x + 0.32, 0.02, -depth],
-          [x + 0.18, -0.4, -depth * 0.3],
-        ],
-        colors.dnaBlue,
-        0.026,
-        { transparent: true, opacity: 0.86 }
-      ).userData.baseOpacity = 0.86;
+      loopPath.push(
+        [x - 0.18, -0.4, depth * 0.4],
+        [x - 0.32, 0.04, depth],
+        [x, height, depth * 0.6],
+        [x + 0.32, 0.02, -depth],
+        [x + 0.18, -0.4, -depth * 0.3]
+      );
+
+      if (i < 4) {
+        const nextX = -0.9 + (i + 1) * 0.45;
+        loopPath.push(
+          [x + 0.24, -0.43, -depth * 0.18],
+          [(x + nextX) / 2, -0.46, 0],
+          [nextX - 0.24, -0.43, 0]
+        );
+      }
 
       [-0.18, 0.18].forEach((dx) => {
         const anchor = new THREE.Mesh(new THREE.SphereGeometry(0.055, 18, 12), anchorMaterial);
@@ -194,6 +197,8 @@
         loops.add(anchor);
       });
     }
+
+    addTube(THREE, loops, loopPath, colors.dnaBlue, 0.026, { transparent: true, opacity: 0.86 }).userData.baseOpacity = 0.86;
 
     loops.position.set(-0.1, 0.02, 0.22);
     group.add(loops);
