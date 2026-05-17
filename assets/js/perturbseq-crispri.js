@@ -596,6 +596,8 @@
       pitch: 0.22,
       dragging: null,
       focus: "nucleus",
+      previousFocus: "nucleus",
+      transitionProgress: 1,
       lastWheelStep: 0,
       time: 0,
     };
@@ -610,19 +612,26 @@
       labels.visible = camera.aspect >= 0.78;
     }
 
+    function stageOpacityVector(name) {
+      const opacityByStage = {
+        nucleus: [1, 0, 0, 0, 0, 0, 0, 0],
+        territory: [0, 1, 0, 0, 0, 0, 0, 0],
+        loops: [0, 0, 1, 0, 0, 0, 0, 0],
+        fiber: [0, 0, 0, 1, 0, 0, 0, 0],
+        nucleosome: [0, 0, 0, 0, 1, 0, 0, 0],
+        helix: [0, 0, 0, 0, 0, 1, 0, 0],
+        crispri: [0, 0, 0, 0, 0, 1, 1, 0],
+        readout: [0, 0, 0, 0, 0, 0, 0, 1],
+      };
+      return opacityByStage[name] || opacityByStage.nucleus;
+    }
+
     function updateStageVisibility() {
       const index = stageOrder.indexOf(state.focus);
-      const opacityByStage = [
-        [1, 0, 0, 0, 0, 0, 0, 0],
-        [0, 1, 0, 0, 0, 0, 0, 0],
-        [0, 0, 1, 0, 0, 0, 0, 0],
-        [0, 0, 0, 1, 0, 0, 0, 0],
-        [0, 0, 0, 0, 1, 0, 0, 0],
-        [0, 0, 0, 0, 0, 1, 0, 0],
-        [0, 0, 0, 0, 0, 1, 1, 0],
-        [0, 0, 0, 0, 0, 0, 0, 1],
-      ];
-      const opacities = opacityByStage[index] || opacityByStage[0];
+      const fromOpacities = stageOpacityVector(state.previousFocus);
+      const toOpacities = stageOpacityVector(state.focus);
+      const blend = state.transitionProgress;
+      const opacities = toOpacities.map((value, i) => fromOpacities[i] + (value - fromOpacities[i]) * blend);
       setGroupOpacity(nucleusGroup, opacities[0]);
       setGroupOpacity(territoryGroup, opacities[1]);
       setGroupOpacity(loopGroup, opacities[2]);
@@ -652,7 +661,12 @@
 
     function setFocus(name) {
       const focus = focuses[name] || focuses.nucleus;
-      state.focus = name in focuses ? name : "nucleus";
+      const nextFocus = name in focuses ? name : "nucleus";
+      if (nextFocus !== state.focus) {
+        state.previousFocus = state.focus;
+        state.transitionProgress = 0;
+      }
+      state.focus = nextFocus;
       state.target.copy(focus.target);
       state.distance = focus.distance;
       if (focusLabel) focusLabel.textContent = focus.label;
@@ -675,6 +689,7 @@
       state.time += 0.012;
       state.cameraTarget.lerp(state.target, 0.055);
       state.cameraDistance += (state.distance - state.cameraDistance) * 0.055;
+      state.transitionProgress = Math.min(1, state.transitionProgress + 0.022);
 
       territory.rotation.y = Math.sin(state.time * 0.45) * 0.05;
       loops.rotation.z = Math.sin(state.time * 0.7) * 0.035;
@@ -691,6 +706,7 @@
       world.traverse((object) => {
         if (object.isSprite) object.quaternion.copy(camera.quaternion);
       });
+      updateStageVisibility();
       updateCamera();
       renderer.render(scene, camera);
       requestAnimationFrame(render);
